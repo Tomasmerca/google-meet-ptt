@@ -49,7 +49,7 @@ function findMicButton() {
 
 // Listen for space key down and when pressed unmute the mic
 document.onkeydown = function (e) {
-    if (!chatOpen && pttAppOn && micButton && e.key === ' ' && spaceDown === false) {
+    if (!chatOpen && pttAppOn && micButton && e.key === 'MediaPlayPause' && spaceDown === false) {
         spaceDown = true;
         if (micButton.dataset.isMuted === 'true') {
             toggleMicButton();
@@ -60,7 +60,7 @@ document.onkeydown = function (e) {
 // Listen for space key up and when released mute the mic
 document.onkeyup = function (e) {
 
-    if (!chatOpen && pttAppOn && micButton && e.key === ' ' && spaceDown) {
+    if (!chatOpen && pttAppOn && micButton && e.key === 'MediaPlayPause' && spaceDown) {
         spaceDown = false;
         if (micButton.dataset.isMuted === 'false') {
             toggleMicButton();
